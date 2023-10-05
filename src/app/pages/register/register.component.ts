@@ -9,18 +9,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   signupForm!: FormGroup
 
-  constructor(private fb:FormBuilder){
-    this.signupForm = this.fb.group({
-      'displayName': ['', Validators.required],
-      'email': ['', Validators.required],
-      'password': ['', Validators.required],
-    })
+  constructor(private builder: FormBuilder) {
+
   }
+  registerForm = this.builder.group({
+    id: this.builder.control('', Validators.compose([Validators.required, Validators.minLength(5)])),
+    name: this.builder.control('', Validators.compose([Validators.required])),
+    password: this.builder.control('', Validators.compose([Validators.required, Validators.pattern('')])),
+    email: this.builder.control('', Validators.compose([Validators.required, Validators.email])),
+    gender: this.builder.control('male'),
+    role: this.builder.control(''),
+    isActive: this.builder.control(false)
+  })
 
   ngOnInit(): void {
 
   }
-  signup(){
+  signup() {
     console.log('hello')
   }
 }
