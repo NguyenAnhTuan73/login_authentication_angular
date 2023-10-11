@@ -12,13 +12,14 @@ import { FooterComponent } from './include/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/material.module';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './pages/home/home.component';
 import { UserlistingComponent } from './pages/userlisting/userlisting.component';
 import { UpdatepopupComponent } from './pages/updatepopup/updatepopup.component';
-
-
+import { CommonModule } from '@angular/common';
+import { ChildComponent } from './child/child.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -32,19 +33,21 @@ import { UpdatepopupComponent } from './pages/updatepopup/updatepopup.component'
     HomeComponent,
     UserlistingComponent,
     UpdatepopupComponent,
-
+    ChildComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

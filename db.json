@@ -1,10 +1,13 @@
 {
   "user": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "124121",
+      "name": "Cheo",
+      "password": "cheo123",
+      "email": "michelCheo@gmail.com",
+      "gender": "male",
+      "role": "admin",
+      "isActive": false
     }
   ]
-
 }

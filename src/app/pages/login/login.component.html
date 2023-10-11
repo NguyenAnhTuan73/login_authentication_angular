@@ -1,23 +1,37 @@
 <div class="container mt-8">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card shadow-lg p-5 mt-5 mb-5">
-        <h1>Welcome Here</h1><hr>
-        <div class="alert alert-success" role="alert">
-          Account Has Been Created! <a routerLink="/login">Login here</a>
-        </div>
-        <form [formGroup]="loginForm" class="text-left">
-          <div class="form-group">
+  <mat-card>
+    <mat-card-header>
+      <h2 class="text-center">Login</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <form
+        class="example-form"
+        [formGroup]="loginForm"
+        (ngSubmit)="login()"
+      >
+        <mat-form-field class="example-full-width">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            placeholder=""
 
-            <label for="">Email</label>
-            <input type="email" class="form-control" placeholder="Email Id here" formControlName="email">
-            <label for="">Password</label>
-            <input type="password" class="form-control" placeholder="******" formControlName="password">
-          </div>
-          <br/>
-          <button class="btn btn-outline-primary w-100" (click)="login()">Create Account</button>
-        </form>
-      </div>
-    </div>
-  </div>
+            formControlName="username"
+          />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            matInput
+            formControlName="password"
+          />
+        </mat-form-field>
+        <div>
+          <button type="submit" mat-raised-button color="primary">Submit</button>
+          <button routerLink="/register" mat-raised-button color="accent"
+            >Back to Register</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>
